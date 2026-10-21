@@ -73,3 +73,32 @@ main > .tagline {
 	width: 2.65rem;
 	height: 2.65rem;
 }
+
+/* Header & dark mode toggle */
+
+.site-header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1rem 1.5rem;
+}
+
+.theme-toggle {
+	background: transparent;
+	border: 2px solid currentColor;
+	border-radius: 50%;
+	color: #FAFAFA;
+	cursor: pointer;
+	font-size: 1rem;
+	height: 2.5rem;
+	width: 2.5rem;
+}
+
+html[data-theme="dark"] main {
+	background: #121212;
+	color: #E0E0E0;
+}
+
+html[data-theme="dark"] .icons-social a {
+	color: #E0E0E0;
+}

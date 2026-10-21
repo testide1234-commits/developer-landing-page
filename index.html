@@ -24,6 +24,11 @@
 	<!-- <link rel="stylesheet" href="css/themes/yellow-black.css"> -->
 </head>
 <body>
+	<header class="site-header">
+		<button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">
+			<i class="fas fa-moon" aria-hidden="true"></i>
+		</button>
+	</header>
 	<main>
 		<div class="intro">Hello, I'm Dinesh!</div>
 		<div class="tagline">All-Star Dev | Code Fanatic | Linux Hacker | Bleh</div>
@@ -67,5 +72,25 @@
       </a>
     </div>
 	</main>
+	<script>
+		(function () {
+			var root = document.documentElement;
+			var button = document.getElementById('theme-toggle');
+			var icon = button.querySelector('i');
+			function apply(dark) {
+				if (dark) { root.setAttribute('data-theme', 'dark'); } else { root.removeAttribute('data-theme'); }
+				button.setAttribute('aria-pressed', dark);
+				icon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+			}
+			var saved = null;
+			try { saved = localStorage.getItem('theme'); } catch (e) {}
+			apply(saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+			button.addEventListener('click', function () {
+				var dark = !root.hasAttribute('data-theme');
+				apply(dark);
+				try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+			});
+		})();
+	</script>
 </body>
 </html>
