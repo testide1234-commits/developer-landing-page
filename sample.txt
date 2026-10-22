@@ -1,0 +1,12 @@
+Best Repositories of 2026 (sample list)
+
+1. facebook/react
+2. microsoft/vscode
+3. torvalds/linux
+4. tensorflow/tensorflow
+5. vercel/next.js
+6. golang/go
+7. rust-lang/rust
+8. kubernetes/kubernetes
+9. python/cpython
+10. ollama/ollama
